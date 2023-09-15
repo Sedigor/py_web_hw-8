@@ -1,9 +1,11 @@
-from models import *
-from connect import *
+from models import Author, Quote
+import connect
 
 
 def main():
+    
     while True:
+        
         command = input("Enter command: ").strip().split(':')
         
         if command[0] == 'name':
@@ -14,7 +16,7 @@ def main():
                 for quote in quotes:
                     print(quote.quote)
             else:
-                print(f"Author {author_name} does not found")
+                print(f"Author {author_name} not found")
         
         elif command[0] == 'tag':
             tag = command[1]
